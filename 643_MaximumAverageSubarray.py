@@ -13,5 +13,5 @@ class Solution(object):
         
 if __name__ == "__main__":
     solution = Solution()
-    testCount = [1, 12, -5, -6, 50, 3]
+    testCount = [43, 11, -19, -6, 22, 34, 14, 17, -2, 58]
     print(solution.findMaxAverage(testCount, 4))

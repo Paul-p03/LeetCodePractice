@@ -1,3 +1,5 @@
+import sys 
+
 exit = False
 list_items = []
 filename = None
@@ -97,6 +99,11 @@ def process_commands(command):
 
     return exit
 
+if len(sys.argv) > 1:
+    filename = sys.argv[1]
+    open_file(f'open {filename}')
+    handle_list()
+
 while not exit:
     command = input("Enter the command Add, Delete, List, or Exit: ").strip().lower() #removes any extra spaces and uppercase letters
-    exit = process_commands(command) 
+    exit = process_commands(command)

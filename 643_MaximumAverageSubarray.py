@@ -1,15 +1,14 @@
 class Solution(object):
     def findMaxAverage(self, nums, k):
-    
-        current_sum = sum(nums[:k])
-        max_avg = current_sum / k
+        currentTotal = sum(nums[:k])
+        maxAvg = currentTotal
         
+        for j in range(k, len(nums)):
+            currentTotal += nums[j] - nums[j-k]
+            maxAvg = max(maxAvg, currentTotal)
+
+        return maxAvg / float(k)
         
-        for i in range(k, len(nums)):
-            current_sum += nums[i] - nums[i - k]
-            max_avg = max(max_avg, current_sum / k)
-        
-        return max_avg
         
 if __name__ == "__main__":
     solution = Solution()
